@@ -4,13 +4,15 @@ public class BubbleSort {
 
     private static int [] array;
 
-    public static int [] bubbleSort (int [] givenArray){
-        array = givenArray;
-        for(int i = givenArray.length-1; i > 0; i--){
-            for(int j = givenArray.length-1; j > 0; j--){
-                if(givenArray[j] < givenArray[j-1]){
-                    int[] newArray = BubbleSort.swap(j, j - 1);
-                    array = newArray;
+    public static int [] sort (int [] givenArray){
+        if(givenArray != null) {
+            array = givenArray;
+            for (int i = givenArray.length - 1; i > 0; i--) {
+                for (int j = givenArray.length - 1; j > 0; j--) {
+                    if (givenArray[j] < givenArray[j - 1]) {
+                        int[] newArray = BubbleSort.swap(j, j - 1);
+                        array = newArray;
+                    }
                 }
             }
         }
